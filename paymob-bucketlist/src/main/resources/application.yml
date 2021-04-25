@@ -1,0 +1,11 @@
+spring:
+ application:
+   name: bucketList
+ jpa:
+   hibernate:
+    ddl-auto: none
+eureka:
+  client:
+    eureka-server-u-r-l-context: http://localhost:8761/eureka
+    fetch-registry: false
+    register-with-eureka: true  

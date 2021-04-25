@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+			<version>2.2.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+  <groupId>com.innovate.paymob</groupId>
+  <artifactId>paymob-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>paymob-parent</name>
+ 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+   
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter</artifactId>
+      </dependency>
+   </dependencies>
+  <modules>
+  	<module>paymob-discovery-server</module>
+  	<module>paymob-zuul-gateway</module>
+  	<module>paymob-common</module>
+  	<module>paymob-service-config</module>
+  	<module>paymob-chat-service</module>
+  	<module>paymob-generalbanking-service</module>
+  	<module>paymob-sendmoney-service</module>
+  	<module>paymob-offers-service</module>
+  </modules>
+</project>

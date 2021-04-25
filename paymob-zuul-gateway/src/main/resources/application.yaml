@@ -1,0 +1,58 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: paymob-zuul-gateway
+ribbon:
+  ReadTimeout: 60000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 130000
+eureka:
+  instance:
+    hostname: localhost
+    port: 8761
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+#    instance:
+#      preferIpAddress: true
+
+
+zuul:
+  #  sensitiveHeaders: Cookie,Set-Cookie
+  ribbon:
+    eager-load:
+      enabled: true
+  routes:
+    nooble-security:
+      sensitiveHeaders:
+      path: /bucket/**
+      stripPrefix: false
+      serviceId: bucketList
+    chatservice:
+      sensitiveHeaders:
+      path: /chat/**
+      stripPrefix: false
+      serviceId: chatservice
+    sendmoney:
+      sensitiveHeaders:
+      path: /rest/**
+      stripPrefix: false
+      serviceId: sendmoney
+    generalbankingservice:
+      sensitiveHeaders:
+      path: /general/**
+      stripPrefix: false
+      serviceId: generalbankingservice
+    configservice:
+      sensitiveHeaders:
+      path: /actuator/**
+      stripPrefix: false
+      serviceId: paymob-service-config
+
+      #      ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin

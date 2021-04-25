@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+     uri: http://sunikldev:8191
+  profiles:
+    active:
+    - prod
+logging:
+  path: logs
+  file: ${logging.path}/log.log
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
+    file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"

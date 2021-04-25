@@ -1,0 +1,16 @@
+spring:
+ application:
+   name: offerservice
+ datasource:
+  initialization-mode: always  
+ jpa:
+   hibernate:
+    ddl-auto: update
+server:
+  port: 9197
+eureka:
+  client:
+    eureka-server-u-r-l-context: http://localhost:8761/eureka
+    fetch-registry: false
+    register-with-eureka: true
+     

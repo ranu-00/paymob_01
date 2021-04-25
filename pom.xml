@@ -37,7 +37,6 @@
   	<module>paymob-service-config</module>
   	<module>paymob-chat-service</module>
   	<module>paymob-generalbanking-service</module>
-  	<module>paymob-sendmoney-service</module>
-  	<module>paymob-offers-service</module>
+  	
   </modules>
 </project>
